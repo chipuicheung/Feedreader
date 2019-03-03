@@ -25,5 +25,5 @@ The starter code of this project included the HTML, JS and the styling of a feed
 
 ## Installation
 
-To install the game, simply clone this repository and open `index.html` in your browser. You will see the given feed and all the written tests (7) in Jasmine at the bottom
+To run the application, simply clone this repository and open `index.html` in your browser. You will see the given feed and all the written tests (7) in Jasmine at the bottom
 
