@@ -63,24 +63,17 @@ $(function() {
   describe('New Feed Selection', function () {
     // Test if new feed is loaded by comparing the content first the first feed
     beforeEach(function(done) {
-      let feed = document.querySelectorAll('.feed');
-      loadFeed(0);
-      let firstEntries = [];
-      for (let firstEntry of feed) {
-        firstEntries.push(feed.innerHTML);
-      };
+      loadFeed(0, function() {
+        let firstFeed = $('.feed').html()
+      });
+      loadFeed(1, function() {
+        let newFeed = $('.feed').html()
+      });
       done();
     });
 
-    it('content changes when new feed is loaded', function(done) {
-      let feed = document.querySelectorAll('.feed');
-      let newEntries = [];
-      loadFeed(1);
-      for (let newEntry of feed) {
-        newEntries.push(feed.innerHTML);
-      }
-      expect('newEntries').not.toEqual('firstEntries');
-      done();
+    it('content changes when new feed is loaded', function() {
+      expect('newFeed').not.toEqual('firstFeed');
     });
   });
 }());
